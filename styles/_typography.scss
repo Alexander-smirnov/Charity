@@ -1,0 +1,16 @@
+@import "compass/typography";
+@import "compass/css3";
+$rem-base-size: 16;
+
+@function rem-calc($size) {
+  $value: 0rem + $size / $rem-base-size;
+  @return $value;
+}
+
+@mixin uwd-rhytm-config($size) {
+  $base-font-size: $size !global;
+  $base-line-height: $size * 1.5 !global;
+  $rhythm-unit: "rem" !global;
+  $rem-with-px-fallback: true !global;
+}
+@include establish-baseline;
