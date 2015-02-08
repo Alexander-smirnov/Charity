@@ -133,18 +133,13 @@ html {
 }
 section.header-wrap {
   width: 100%;
-  overflow: hidden;
-  padding-top: 20px;
+  height: 80px;
+  background-color: #FFF;
 }
 section.header-wrap header {
+  width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  position: fixed;
-  top: 20px;
-  left: 0;
-  z-index: 99;
-  width: 100%;
-  background-color: #FFF;
 }
 section.header-wrap header h1 {
   overflow: hidden;
@@ -153,43 +148,47 @@ section.header-wrap header h1 {
   float: left;
   margin-left: 10px;
 }
-section.header-wrap header ul.nav {
-  float: right;
-  vertical-align: middle;
-  position: absolute;
-  right: 8%;
-  top: 4%;
-}
-section.header-wrap header ul.nav li {
-  display: none;
-}
-section.header-wrap header ul.nav li a {
-  font-family: Calibri;
-  font-size: 1.25em;
-  line-height: 1.2em;
-}
-section.header-wrap header ul.nav li:first-child {
-  display: block;
-  background: url("../images/mobile-menu-icon.png") left center no-repeat;
-  padding: 5px 0 5px 40px;
-}
-section.header-wrap header ul.nav li:first-child span {
-  font-size: 1.25em;
-  line-height: 1.2em;
-}
-section.header-wrap header ul.nav:hover {
-  background-color: #CAE2F5;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
-  opacity: 0.7;
-}
-section.header-wrap header ul.nav:hover li {
-  display: block;
-  background-image: none;
-  padding: 5px;
-}
-section.header-wrap header ul.nav:hover li a:hover {
-  text-decoration: none;
-  font-weight: bold;
+@media (max-width: 640px) {
+  section.header-wrap header ul.nav {
+    float: right;
+    vertical-align: middle;
+    position: absolute;
+    right: 8%;
+    top: 4%;
+    overflow: hidden;
+  }
+  section.header-wrap header ul.nav li {
+    display: none;
+  }
+  section.header-wrap header ul.nav li a {
+    font-family: Calibri;
+    font-size: 1.25em;
+    line-height: 1.2em;
+    position: inherit;
+  }
+  section.header-wrap header ul.nav li:first-child {
+    display: block;
+    background: url("../images/mobile-menu-icon.png") left center no-repeat;
+    padding: 5px 0 5px 40px;
+  }
+  section.header-wrap header ul.nav li:first-child span {
+    font-size: 1.25em;
+    line-height: 1.2em;
+  }
+  section.header-wrap header ul.nav:hover {
+    background-color: #CAE2F5;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.7;
+  }
+  section.header-wrap header ul.nav:hover li {
+    display: block;
+    background-image: none;
+    padding: 5px;
+  }
+  section.header-wrap header ul.nav:hover li a:hover {
+    text-decoration: none;
+    font-weight: bold;
+  }
 }
 section.header-wrap header ul.nav li.main a {
   border-bottom: 4px solid #FF9673;
@@ -218,10 +217,9 @@ section.header-wrap header ul.nav li.ask a {
 
 div.project-wrap {
   background: url("../images/backgraund.jpg") no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   padding: 10% 0;
   overflow: hidden;
-  margin-top: 80px;
 }
 div.project-wrap section.project {
   width: 60.9375%;
@@ -274,6 +272,7 @@ div.gallery-wrap ul.top-site li.gallery figure img {
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
+  behavior: url(PIE.htc);
 }
 div.gallery-wrap ul.top-site li.gallery figure figcaption {
   color: #FFA7FF;
@@ -284,6 +283,7 @@ div.gallery-wrap ul.top-site li.studios figure img {
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
+  behavior: url(PIE.htc);
 }
 div.gallery-wrap ul.top-site li.studios figure figcaption {
   color: #40E291;
@@ -294,6 +294,7 @@ div.gallery-wrap ul.top-site li.affiche figure img {
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
+  behavior: url(PIE.htc);
 }
 div.gallery-wrap ul.top-site li.affiche figure figcaption {
   color: #FF9673;
@@ -331,6 +332,7 @@ div.gallery-wrap ul.top-site li a {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
+  behavior: url(PIE.htc);
   color: #FFF;
   font-weight: bold;
 }
@@ -348,6 +350,7 @@ footer {
 footer ul.footer {
   max-width: 960px;
   padding: 0 10px;
+  margin: 0 auto;
 }
 footer ul.footer li {
   width: 48.97959%;
@@ -394,9 +397,10 @@ footer ul.footer li ul.social li ul {
 footer ul.footer li ul.social li ul li {
   display: inline-block;
   text-align: center;
-  width: 28.57143%;
+  width: 31.03448%;
   float: left;
   padding-top: 3px;
+  overflow: hidden;
 }
 footer ul.footer li ul.social li ul li:nth-child(3n + 1) {
   margin-left: 0;
@@ -405,41 +409,133 @@ footer ul.footer li ul.social li ul li:nth-child(3n + 1) {
   margin-left: 0;
 }
 footer ul.footer li ul.social li ul li:nth-child(3n + 2) {
-  margin-left: 35.71429%;
+  margin-left: 34.48276%;
   margin-right: -100%;
   clear: none;
 }
 footer ul.footer li ul.social li ul li:nth-child(3n + 3) {
-  margin-left: 71.42857%;
+  margin-left: 68.96552%;
   margin-right: -100%;
   clear: none;
 }
-footer ul.footer li ul.social li ul li a {
-  background-color: #58525C;
-  font-size: 250%;
-  border: 1px solid #58525C;
+footer ul.footer li ul.social li ul li span {
+  background-color: #7396FF;
+  border: 0px solid #7396FF;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
-}
-footer ul.footer li ul.social li ul li a:hover {
-  background-color: #7396FF;
-}
-footer ul.footer li ul.social li ul li span {
+  behavior: url(PIE.htc);
   width: 42px;
   height: 42px;
-  vertical-align: middle;
+  font-size: 25px;
+  padding-top: 7px;
+  padding-right: 5px;
 }
-footer ul.footer li ul.social li ul li:last-child a {
-  background-color: transparent;
-  border: none;
-  padding: 0 2px;
+
+html {
+  font-size: 100%;
+  line-height: 1.5em;
 }
-footer ul.footer li ul.social li ul li:last-child a img {
-  -moz-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-footer ul.footer li ul.social li ul li:last-child a img:hover {
-  -moz-filter: grayscale(0%);
-  filter: grayscale(0%);
+
+@media (min-width: 641px) {
+  section.header-wrap header.fix ul.nav {
+    float: right;
+    margin: 20px 15px auto 0;
+  }
+  section.header-wrap header.fix ul.nav li {
+    display: inline-block;
+    margin: 0 3px;
+  }
+  section.header-wrap header.fix ul.nav li:first-child {
+    display: none;
+  }
+  section.header-wrap header.fix ul.nav a {
+    font-size: 0.9375em;
+    line-height: 1.6em;
+    transition: all 0.5s ease-in-out;
+  }
+  section.header-wrap header.fix ul.nav a:hover {
+    text-decoration: none;
+    font-size: 1.0625em;
+    line-height: 1.41176em;
+    font-weight: bold;
+    margin: 0 2px;
+  }
+
+  div.project-wrap {
+    background-size: 100% 100%;
+  }
+
+  div.gallery-wrap div.gallerys ul.top-site {
+    margin: 0 10px;
+    overflow: hidden;
+  }
+  div.gallery-wrap div.gallerys ul.top-site li {
+    width: 28.57143%;
+    float: left;
+  }
+  div.gallery-wrap div.gallerys ul.top-site li:nth-child(3n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  div.gallery-wrap div.gallerys ul.top-site li:nth-child(3n + 2) {
+    margin-left: 35.71429%;
+    margin-right: -100%;
+    clear: none;
+  }
+  div.gallery-wrap div.gallerys ul.top-site li:nth-child(3n + 3) {
+    margin-left: 71.42857%;
+    margin-right: -100%;
+    clear: none;
+  }
+
+  footer ul.footer li {
+    text-align: left;
+  }
+
+  footer ul.footer li ul.social li ul li {
+    width: 21.05263%;
+    float: left;
+  }
+  footer ul.footer li ul.social li ul li:nth-child(4n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  footer ul.footer li ul.social li ul li:nth-child(4n + 2) {
+    margin-left: 26.31579%;
+    margin-right: -100%;
+    clear: none;
+  }
+  footer ul.footer li ul.social li ul li:nth-child(4n + 3) {
+    margin-left: 52.63158%;
+    margin-right: -100%;
+    clear: none;
+  }
+  footer ul.footer li ul.social li ul li:nth-child(4n + 4) {
+    margin-left: 78.94737%;
+    margin-right: -100%;
+    clear: none;
+  }
+
+  footer ul.footer li ul.social li ul li {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  }
+
+  footer ul.footer li ul.social li ul li:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=0);
+  }
 }

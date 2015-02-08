@@ -1,0 +1,67 @@
+@import "susy";
+@import "typography";
+@import "compass/css3";
+@media (min-width: 641px) {
+  section.header-wrap header.fix ul.nav {
+    float: right;
+    margin: 20px 15px auto 0;
+    li {
+      display: inline-block;
+      margin: 0 3px;
+    }
+    li:first-child {
+      display: none;
+    }
+
+    a {
+      @include adjust-font-size-to(15px);
+      transition: all 0.5s ease-in-out;
+    }
+
+    a:hover {
+      text-decoration: none;
+      @include adjust-font-size-to(17px);
+      font-weight: bold;
+      margin: 0 2px;
+    }
+  }
+
+  div.project-wrap {
+    background-size: 100% 100%;
+  }
+
+  div.gallery-wrap div.gallerys ul.top-site {
+    margin: 0 10px;
+    overflow: hidden;
+    li {
+      @include gallery(1 of 3);
+
+    }
+  }
+
+  footer ul.footer li {
+    text-align: left;
+  }
+
+  footer ul.footer li ul.social li ul li {
+    @include gallery(1 of 4);
+  }
+
+  footer ul.footer li ul.social li ul li {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  }
+  footer ul.footer li ul.social li ul li:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=0);
+  }
+}
