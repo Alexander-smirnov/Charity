@@ -12,9 +12,12 @@
     li:first-child {
       display: none;
     }
+    li.active {
+      display: none;
+    }
 
     a {
-      @include adjust-font-size-to(15px);
+      @include adjust-font-size-to(11.2px);
       transition: all 0.5s ease-in-out;
     }
 
@@ -26,26 +29,73 @@
     }
   }
 
-  div.project-wrap {
+  main div.project-wrap {
     background-size: 100% 100%;
+    div.section-wrap {
+      section.project {
+        text-align: left;
+        padding-left: 20px;
+        @include gallery (8 of 13);
+      }
+    }
+  }
+
+
+  div.section-wrap {
+
+    span {
+      @include adjust-font-size-to(40px);
+    }
+    h2 {
+      @include adjust-font-size-to(55px);
+
+    }
+    p {
+      @include adjust-font-size-to(24px);
+      @include margin-trailer;
+    }
+    a {
+      color: #FFF;
+      @include adjust-font-size-to(20px);
+      border: 1px solid #FFF;
+      padding: 10px 20px;
+      @include border-radius(10px);
+    }
   }
 
   div.gallery-wrap div.gallerys ul.top-site {
     margin: 0 10px;
     overflow: hidden;
     li {
-      @include gallery(1 of 3);
-
+      @include gallery(100 of 300);
+      figure {
+        margin: 34px 0 0;
+      }
+      img {
+        max-width: $widthsize*0.9;
+      }
+      @media (max-width: 695px){
+        img {
+          max-width: $widthsize*0.8;
+        }
+      }
     }
   }
 
-  footer ul.footer li {
-    text-align: left;
+  footer ul.footer {
+    overflow: hidden;
   }
 
-  footer ul.footer li ul.social li ul li {
-    @include gallery(1 of 4);
+  footer ul.footer li.first, footer ul.footer li.second {
+
+    @include span(1 of 3);
   }
+
+  footer ul.footer li:last-child {
+    float: right;
+    margin-right: 0;
+  }
+
 
   footer ul.footer li ul.social li ul li {
     filter: grayscale(100%);
@@ -64,4 +114,99 @@
 
     filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=0);
   }
+  ul.footer li ul.social li ul li span {
+    padding: 15px 8px 0;
+  }
+
+/*----------------------------------------------------------------------------------//
+//-------------------------------------STUDIOS--------------------------------------//
+//----------------------------------------------------------------------------------*/
+.studio main {
+   ul.studia li {
+     display: inline-block;
+     text-align: center;
+     margin: 0 10px;
+   }
+}
+
+.studio footer {
+  clear: both;
+}
+
+/*----------------------------------------------------------------------------------//
+//-------------------------------------NEWS-----------------------------------------//
+//----------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------//
+//-------------------------------------CONTACTS-------------------------------------//
+//----------------------------------------------------------------------------------*/
+.conta ul.cont_wrapp {
+  margin: 65px auto;
+  text-align: center;
+  li.adress_wrapp {
+    width: 59%;
+  }
+  li.phone_wrapp {
+    width: 40%;
+  }
+  li.adress_wrapp, li.phone_wrapp {
+    display: inline-block;
+    vertical-align: top;
+  }
+  li.mobile {
+    margin-bottom: 25px;
+  }
+  .mobile, .phone, .address, .email {
+    text-align: left;
+  }
+}
+/*----------------------------------------------------------------------------------//
+//-----------------------------------PROJECT----------------------------------------//
+//----------------------------------------------------------------------------------*/
+.proj .project-list {
+  li {
+    overflow: hidden;
+    margin: 34px 0;
+  }
+  .open_world, .step, .play, .ruler {
+    h3, p {
+      float: right;
+    }
+    img {
+      float: left;
+      padding: 0 15px;
+      @media (min-width: 768px) {
+        padding: 0 45px;
+      }
+    }
+    p {
+      width: 50%;
+    }
+  }
+  .future, .together, .road {
+    h3, p {
+      float: left;
+    }
+    img {
+      float: right;
+      padding: 0 15px;
+      @media (min-width: 768px) {
+        padding: 0 45px;
+      }
+    }
+    p {
+      width: 50%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
 }
